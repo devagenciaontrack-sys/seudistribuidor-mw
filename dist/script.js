@@ -1,7 +1,0 @@
-const appLinks=document.querySelectorAll('.app-link');
-const instagramLinks=document.querySelectorAll('.instagram-link');
-function track(name){if(typeof window.gtag==='function')window.gtag('event',name);window.dispatchEvent(new CustomEvent(name));}
-appLinks.forEach(link=>link.addEventListener('click',()=>track('distribuidor_app_click')));
-instagramLinks.forEach(link=>link.addEventListener('click',()=>track('distribuidor_instagram_click')));
-document.querySelectorAll('[data-video]').forEach(video=>{video.querySelector('.video-cover').addEventListener('click',()=>{const frame=document.createElement('iframe');frame.src='https://www.youtube-nocookie.com/embed/ik_H521TicA?autoplay=1&rel=0';frame.title='Já imaginou revender?';frame.allow='autoplay; encrypted-media; picture-in-picture';frame.allowFullscreen=true;video.append(frame);video.querySelector('.video-cover').remove();track('distribuidor_video_play');},{once:true});});
-const form=document.querySelector('#calc');let started=false;const parse=value=>Number(value.replace(/[^\d,.-]/g,'').replace(',','.'))||0;form.addEventListener('input',()=>{if(!started){started=true;track('distribuidor_simulator_start');}});form.addEventListener('submit',event=>{event.preventDefault();const data=new FormData(form);const total=(parse(data.get('sale'))-parse(data.get('purchase'))-parse(data.get('cost')))*parse(data.get('quantity'));document.querySelector('#result b').textContent=total.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});track('distribuidor_simulator_complete');});
