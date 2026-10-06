@@ -9,11 +9,12 @@
 <meta property="og:title" content="Seu Distribuidor — Já imaginou revender?">
 <meta property="og:description" content="Conheça os produtos, faça suas contas e descubra se essa atividade combina com você.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="assets/video-capa.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M10 8h44a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6H26l-12 10v-10h-4a6 6 0 0 1-6-6V14a6 6 0 0 1 6-6Z' fill='%2316805B'/%3E%3Ccircle cx='22' cy='28' r='4' fill='%23FFF8E8'/%3E%3Ccircle cx='32' cy='28' r='4' fill='%23FFF8E8'/%3E%3Ccircle cx='42' cy='28' r='4' fill='%23FF7657'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Sora:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
@@ -29,6 +30,11 @@
     <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8l-5 4v-4H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/></symbol>
     <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15Z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+    <symbol id="h-arrow" viewBox="0 0 120 70"><path d="M6 10c22 2 52 8 74 26 9 7 15 14 20 24"/><path d="M84 56c6 2 11 3 17 5 1-6 1-12 0-18"/></symbol>
+    <symbol id="h-next" viewBox="0 0 60 30"><path d="M3 18c14-8 30-10 50-4"/><path d="M44 6c4 3 7 6 10 9-4 2-8 4-11 7"/></symbol>
+    <symbol id="h-back" viewBox="0 0 600 70" preserveAspectRatio="none"><path d="M590 8c6 30-30 50-140 54C330 66 170 66 60 56 30 53 14 44 10 30"/><path d="M2 42c3-5 6-9 8-13 4 4 9 7 14 9"/></symbol>
+    <symbol id="h-box" viewBox="0 0 28 28"><path d="M4 5c7-1 13-1 20 0 1 6 1 12 0 18-7 1-13 1-20 0-1-6-1-12 0-18Z"/></symbol>
+    <symbol id="h-tick" viewBox="0 0 28 28"><path d="M6 15c2 1 4 4 5 6 3-7 7-12 13-17"/></symbol>
     <symbol id="i-loop" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></symbol>
   </defs>
 </svg>
@@ -63,14 +69,12 @@
       <div class="hero-video">
         <div class="story" data-video-id="ik_H521TicA" data-track-play="distribuidor_video_play">
           <button class="video-poster" type="button" aria-label="Assistir ao vídeo: Já imaginou revender?">
-            <img src="https://i.ytimg.com/vi/ik_H521TicA/hqdefault.jpg" alt="" width="480" height="360" decoding="async">
+            <img src="assets/video-capa.jpg" alt="" width="720" height="1280" decoding="async" fetchpriority="high">
             <span class="story-bar"><span class="story-avatar"><svg class="ic"><use href="#i-chat"/></svg></span><span><b>Seu Distribuidor</b><small>Uma conversa direta</small></span></span>
             <span class="story-play"><svg class="ic"><use href="#i-play"/></svg>Assistir</span>
           </button>
         </div>
-        <span class="chip chip-a" aria-hidden="true"><svg class="ic"><use href="#i-ig"/></svg>Divulgação</span>
-        <span class="chip chip-b" aria-hidden="true"><svg class="ic"><use href="#i-chat"/></svg>Mensagens</span>
-        <span class="chip chip-c" aria-hidden="true"><svg class="ic"><use href="#i-box"/></svg>Pedidos</span>
+        <p class="scribble hero-scribble" aria-hidden="true">ouve essa conversa<svg><use href="#h-arrow"/></svg></p>
       </div>
 
       <div class="hero-body">
@@ -80,9 +84,7 @@
           <!-- TODO: substituir pelo link real: [INSERIR_INSTAGRAM_SEU_DISTRIBUIDOR] -->
           <a class="btn btn-line btn-lg" href="#" data-instagram data-track="distribuidor_instagram_click" data-location="hero" target="_blank" rel="noopener"><svg class="ic"><use href="#i-ig"/></svg> VER NO INSTAGRAM</a>
         </div>
-        <ul class="hero-tags" aria-label="Para começar">
-          <li>Começar pequeno</li><li>Testar uma ideia</li><li>No seu ritmo</li>
-        </ul>
+        <p class="scribble hero-aside">começar pequeno, testar uma ideia, no seu ritmo.</p>
       </div>
     </div>
   </section>
@@ -91,19 +93,22 @@
   <section class="small" id="como-funciona">
     <div class="wrap small-grid">
       <div>
-        <p class="eyebrow">Com calma, do seu jeito</p>
         <h2>Não precisa começar pensando grande.</h2>
       </div>
       <p class="small-text">Toda operação de vendas começa entendendo produto, público e custos. Conheça as opções disponíveis e avalie com calma como a revenda poderia funcionar na sua rotina.</p>
     </div>
     <div class="wrap">
-      <ol class="cycle" aria-label="Sequência da revenda">
-        <li><span>Escolha</span></li>
-        <li><span>Divulgue</span></li>
-        <li><span>Atenda</span></li>
-        <li><span>Aprenda</span></li>
-        <li class="cycle-last"><span>Repita</span><svg class="ic" aria-hidden="true"><use href="#i-loop"/></svg></li>
-      </ol>
+      <div class="loop">
+        <ol class="loop-words" aria-label="Sequência da revenda">
+          <li>Escolha</li>
+          <li>Divulgue</li>
+          <li>Atenda</li>
+          <li>Aprenda</li>
+          <li class="loop-last">Repita</li>
+        </ol>
+        <svg class="loop-back" aria-hidden="true"><use href="#h-back"/></svg>
+        <p class="scribble loop-note" aria-hidden="true">e de novo, se fizer sentido</p>
+      </div>
     </div>
   </section>
 
@@ -111,7 +116,6 @@
   <section class="channels">
     <div class="wrap channels-grid">
       <div class="channels-head">
-        <p class="eyebrow">Onde você já está</p>
         <h2>Sua vitrine pode estar onde você já conversa com pessoas.</h2>
       </div>
       <div class="thread" aria-label="Canais de divulgação">
@@ -139,6 +143,7 @@
         <h2>Antes de vender, <em>faça a conta.</em></h2>
         <p class="sim-intro">Use os valores que fazem sentido para a sua ideia. A conta é simples:</p>
         <p class="formula">(preço de venda − preço de compra − outros custos) × quantidade</p>
+        <p class="scribble sim-note" aria-hidden="true">use os seus números, sem chute</p>
       </div>
 
       <form class="calc" id="calc" novalidate>
@@ -162,7 +167,6 @@
   <section class="know">
     <div class="wrap know-grid">
       <div class="know-text">
-        <p class="eyebrow">Para conhecer sem pressa</p>
         <h2>Quer conhecer antes de decidir?</h2>
         <ul class="checklist">
           <li><button type="button" aria-pressed="false"><span class="box"><svg class="ic"><use href="#i-check"/></svg></span><small>Passo 1</small>Veja as opções.</button></li>
@@ -174,7 +178,7 @@
       </div>
       <div class="know-phone">
         <div class="phone"><img src="atkfut-app.jpg" alt="Tela inicial do aplicativo" width="736" height="1600" loading="lazy" decoding="async"></div>
-        <span class="note note-a" aria-hidden="true"><svg class="ic"><use href="#i-bell"/></svg>Opções disponíveis no app</span>
+        <p class="scribble phone-note" aria-hidden="true">é aqui que você vê as opções<svg><use href="#h-arrow"/></svg></p>
       </div>
     </div>
   </section>
@@ -183,13 +187,17 @@
   <section class="honest" id="transparencia">
     <div class="wrap honest-grid">
       <div>
-        <p class="eyebrow">Transparência</p>
+        <p class="scribble honest-kicker">papo reto:</p>
         <h2>Revender também exige trabalho.</h2>
       </div>
       <div>
         <p class="honest-text">Divulgar, conversar com clientes, organizar pagamentos, acompanhar pedidos e administrar custos fazem parte de uma atividade de revenda. O aplicativo pode facilitar o acesso às opções disponíveis; o desenvolvimento da operação depende de quem vende.</p>
-        <ul class="tasks" aria-label="Tarefas de quem revende">
-          <li>Divulgar</li><li>Conversar com clientes</li><li>Organizar pagamentos</li><li>Acompanhar pedidos</li><li>Administrar custos</li>
+        <ul class="todo" aria-label="Tarefas de quem revende">
+          <li><svg aria-hidden="true"><use href="#h-box"/></svg>divulgar</li>
+          <li><svg aria-hidden="true"><use href="#h-box"/></svg>conversar com clientes</li>
+          <li><svg aria-hidden="true"><use href="#h-box"/></svg>organizar pagamentos</li>
+          <li><svg aria-hidden="true"><use href="#h-box"/></svg>acompanhar pedidos</li>
+          <li><svg aria-hidden="true"><use href="#h-box"/></svg>administrar custos</li>
         </ul>
       </div>
     </div>
@@ -212,7 +220,6 @@
   <section class="faq" id="duvidas">
     <div class="wrap faq-grid">
       <div>
-        <p class="eyebrow">Dúvidas</p>
         <h2>Perguntas frequentes</h2>
       </div>
       <div class="faq-list">
@@ -272,6 +279,6 @@
   <a class="btn btn-green btn-lg" href="https://foxappy.com/link?store=atkfut" data-track="distribuidor_app_click" data-location="sticky_mobile">QUERO VER COMO COMEÇAR <svg class="ic"><use href="#i-arrow"/></svg></a>
 </div>
 
-<script src="main.js?v=1"></script>
+<script src="main.js?v=2"></script>
 </body>
 </html>

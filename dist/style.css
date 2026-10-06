@@ -231,3 +231,43 @@ h1{ font-size:clamp(44px, 7vw, 88px); font-weight:800; line-height:1.02; letter-
 .sticky{ position:fixed; z-index:60; left:0; right:0; bottom:0; padding:12px 16px calc(12px + env(safe-area-inset-bottom, 0px)); background:linear-gradient(transparent, rgba(255,248,232,.96) 30%); }
 .sticky .btn{ width:100%; }
 @media (min-width:900px){ .sticky{ display:none; } }
+
+/* ---------- toque humano (v2): rabiscos, caderno, papel ---------- */
+:root{ --hand:'Gochi Hand', 'Segoe Print', cursive; --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+body::after{ content:""; position:fixed; inset:0; z-index:200; pointer-events:none; background-image:var(--grain); opacity:.07; mix-blend-mode:multiply; }
+.hero::before{ display:none; }
+.scribble{ font-family:var(--hand); font-size:24px; line-height:1.15; color:var(--green); }
+.scribble svg{ fill:none; stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+
+/* hero */
+.hero-scribble{ position:absolute; z-index:2; left:-175px; top:26%; display:flex; flex-direction:column; align-items:flex-end; color:var(--coral-2); transform:rotate(-7deg); }
+.hero-scribble svg{ width:84px; height:48px; margin-top:2px; }
+@media (max-width:899px){ .hero-scribble{ display:none; } }
+.hero-aside{ font-size:25px; color:var(--green-dk); transform:rotate(-1.5deg); max-width:24ch; }
+.story{ transform:rotate(1.5deg); }
+
+/* 02 — sequência escrita com setas à mão */
+.loop{ position:relative; padding-bottom:70px; }
+.loop-words{ list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; align-items:center; gap:6px 0; }
+.loop-words li{ display:flex; align-items:center; font-family:var(--title); font-weight:800; font-size:clamp(28px, 4.4vw, 56px); letter-spacing:-.04em; line-height:1.1; }
+.loop-words li:not(:last-child)::after{ content:""; width:clamp(34px, 5vw, 64px); height:28px; margin-inline:6px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Cpath d='M3 18c14-8 30-10 50-4M44 6c4 3 7 6 10 9-4 2-8 4-11 7' fill='none' stroke='%23FF7657' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; }
+.loop-words li:nth-child(2){ transform:rotate(-2deg); }
+.loop-words li:nth-child(4){ transform:rotate(1.5deg); }
+.loop-last{ color:var(--green); }
+.loop-back{ position:absolute; left:2%; right:6%; bottom:14px; width:92%; height:56px; fill:none; stroke:var(--green); stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }
+.loop-note{ position:absolute; left:34%; bottom:-14px; transform:rotate(-2deg); }
+@media (max-width:700px){ .loop-back{ display:none; } .loop{ padding-bottom:40px; } .loop-note{ left:0; bottom:0; } }
+
+/* 05 — nota do celular */
+.phone-note{ position:absolute; z-index:2; left:-130px; top:30%; display:flex; flex-direction:column; align-items:flex-end; max-width:9ch; text-align:right; transform:rotate(-5deg); }
+.phone-note svg{ width:76px; height:44px; }
+@media (max-width:899px){ .phone-note{ display:none; } }
+
+/* simulador */
+.sim-note{ margin-top:22px; color:var(--coral); font-size:26px; transform:rotate(-2deg); }
+
+/* 06 — lista de caderno */
+.honest-kicker{ color:var(--coral-2); font-size:28px; margin-bottom:6px; transform:rotate(-2deg); }
+.todo{ list-style:none; margin:30px 0 0; padding:18px 22px 18px 52px; background:#FFFDF6; background-image:linear-gradient(90deg, transparent 36px, rgba(255,118,87,.45) 36px 37.5px, transparent 37.5px), repeating-linear-gradient(transparent 0 41px, rgba(22,128,91,.18) 41px 42px); box-shadow:0 18px 34px -24px rgba(32,37,34,.5); transform:rotate(-.8deg); max-width:440px; }
+.todo li{ display:flex; align-items:center; gap:12px; min-height:42px; font-family:var(--hand); font-size:25px; color:var(--ink); }
+.todo svg{ width:24px; height:24px; flex:none; fill:none; stroke:var(--green-dk); stroke-width:2.2; stroke-linecap:round; }
