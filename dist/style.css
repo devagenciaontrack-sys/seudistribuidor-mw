@@ -264,3 +264,7 @@ body::after{ content:""; position:fixed; inset:0; z-index:200; pointer-events:no
 html{ touch-action:manipulation; -webkit-tap-highlight-color:rgba(22,128,91,.18); }
 main [id]{ scroll-margin-top:84px; }
 @media (max-width:959px){ html{ scroll-padding-bottom:96px; } }
+
+/* "Quer acompanhar primeiro?": WhatsApp + Instagram */
+.insta-actions{ display:flex; flex-direction:column; gap:10px; }
+@media (max-width:620px){ .insta-actions .btn{ width:100%; } }
