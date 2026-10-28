@@ -6,7 +6,17 @@
     window.dataLayer.push(Object.assign({ event: name }, params));
     if (typeof window.gtag === 'function') window.gtag('event', name, params);
     if (typeof window.fbq === 'function') window.fbq('trackCustom', name, params);
-    if (window.ttq && typeof window.ttq.track === 'function') window.ttq.track(name, params);
+    if (window.ttq && typeof window.ttq.track === 'function') {
+      window.ttq.track(name, params);
+      // O TikTok só otimiza campanha por eventos padrão dele, então o
+      // nome da casa vai acompanhado do equivalente padrão.
+      var padrao = {
+        distribuidor_app_click: 'ClickButton',
+        distribuidor_group_click: 'Contact',
+        distribuidor_instagram_click: 'Contact'
+      }[name];
+      if (padrao) window.ttq.track(padrao, params);
+    }
   }
   window.trackEvent = track;
 
