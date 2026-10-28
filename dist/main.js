@@ -11,6 +11,8 @@
       // O TikTok só otimiza campanha por eventos padrão dele, então o
       // nome da casa vai acompanhado do equivalente padrão.
       var padrao = {
+        distribuidor_simulator_complete: 'SubmitForm',
+        distribuidor_simulator_start: 'ViewContent',
         distribuidor_app_click: 'ClickButton',
         distribuidor_group_click: 'Contact',
         distribuidor_instagram_click: 'Contact'
@@ -19,6 +21,23 @@
     }
   }
   window.trackEvent = track;
+
+  // A conversão acontece na Foxappy, fora deste site. Repassar o
+  // identificador do clique da TikTok (ttclid) e as UTMs permite
+  // amarrar a venda ao anúncio depois, do lado de lá.
+  (function repassarOrigem() {
+    var entrada = new URLSearchParams(location.search);
+    var levar = ['ttclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    var achados = levar.filter(function (k) { return entrada.get(k); });
+    if (!achados.length) return;
+    document.querySelectorAll('a[href*="foxappy.com"]').forEach(function (a) {
+      try {
+        var u = new URL(a.href);
+        achados.forEach(function (k) { u.searchParams.set(k, entrada.get(k)); });
+        a.href = u.toString();
+      } catch (e) { /* link malformado: deixa como está */ }
+    });
+  })();
 
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-track]');
