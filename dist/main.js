@@ -19,6 +19,14 @@
       }[name];
       if (padrao) window.ttq.track(padrao, params);
     }
+    // X (Twitter): evento de conversão nos cliques que levam ao app e ao grupo
+    if (typeof window.twq === 'function' &&
+        (name === 'distribuidor_app_click' || name === 'distribuidor_group_click')) {
+      window.twq('event', 'tw-reqnk-rjf3c', {
+        contents: [{ content_name: name, content_group_id: params.location || null }],
+        conversion_id: name + '-' + Date.now()
+      });
+    }
   }
   window.trackEvent = track;
 
